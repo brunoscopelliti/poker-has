@@ -45,6 +45,62 @@ const threeOfAKind_of_J = [
   {rank:'5', type:'C'}
 ];
 
+const stright_of_9 = [
+  {rank:'6', type:'H'},
+  {rank:'7', type:'D'},
+  {rank:'9', type:'S'},
+  {rank:'8', type:'C'},
+  {rank:'5', type:'C'}
+];
+
+const stright_of_A_top = [
+  {rank:'K', type:'H'},
+  {rank:'J', type:'D'},
+  {rank:'A', type:'S'},
+  {rank:'10', type:'C'},
+  {rank:'Q', type:'C'}
+];
+
+const stright_of_A_bottom = [
+  {rank:'3', type:'H'},
+  {rank:'4', type:'D'},
+  {rank:'2', type:'S'},
+  {rank:'5', type:'C'},
+  {rank:'A', type:'C'}
+];
+
+const flush_of_J = [
+  {rank:'3', type:'H'},
+  {rank:'4', type:'H'},
+  {rank:'2', type:'H'},
+  {rank:'5', type:'H'},
+  {rank:'J', type:'H'}
+];
+
+const flush_of_5 = [
+  {rank:'2', type:'D'},
+  {rank:'4', type:'D'},
+  {rank:'2', type:'D'},
+  {rank:'5', type:'D'},
+  {rank:'4', type:'D'}
+];
+
+const full_of_7 = [
+  {rank:'7', type:'D'},
+  {rank:'7', type:'S'},
+  {rank:'2', type:'D'},
+  {rank:'7', type:'H'},
+  {rank:'2', type:'C'}
+];
+
+const full_of_3 = [
+  {rank:'3', type:'D'},
+  {rank:'3', type:'S'},
+  {rank:'A', type:'D'},
+  {rank:'3', type:'H'},
+  {rank:'A', type:'C'}
+];
+
 const poker_of_A = [
   {rank:'A', type:'H'},
   {rank:'9', type:'D'},
@@ -52,6 +108,33 @@ const poker_of_A = [
   {rank:'A', type:'C'},
   {rank:'A', type:'D'}
 ];
+
+const strightFlush_of_9 = [
+  {rank:'6', type:'H'},
+  {rank:'7', type:'H'},
+  {rank:'9', type:'H'},
+  {rank:'8', type:'H'},
+  {rank:'5', type:'H'}
+];
+
+const strightFlush_of_A_bottom = [
+  {rank:'3', type:'D'},
+  {rank:'4', type:'D'},
+  {rank:'2', type:'D'},
+  {rank:'5', type:'D'},
+  {rank:'A', type:'D'}
+];
+
+const royalStrightFlush = [
+  {rank:'K', type:'C'},
+  {rank:'J', type:'C'},
+  {rank:'A', type:'C'},
+  {rank:'10', type:'C'},
+  {rank:'Q', type:'C'}
+];
+
+
+
 
 
 
