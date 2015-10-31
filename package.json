@@ -1,0 +1,30 @@
+{
+  "name": "poker-has",
+  "version": "0.0.1",
+  "description": "Evaluate poker hold'em hands",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunoscopelliti/poker-has.git"
+  },
+  "keywords": [
+    "poker",
+    "texas",
+    "hold'em",
+    "evaluate",
+    "has"
+  ],
+  "author": "Bruno Scopelliti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brunoscopelliti/poker-has/issues"
+  },
+  "homepage": "https://github.com/brunoscopelliti/poker-has",
+  "devDependencies": {
+    "tape": "^4.2.2",
+    "tape-case": "^1.0.1"
+  }
+}
