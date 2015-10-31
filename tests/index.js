@@ -208,3 +208,31 @@ tcase([
   return m.hasPair(cards);
 
 });
+
+
+/*
+ * hasDoublePair
+ */
+
+tcase([
+  { description: 'has-double-pair', args: [rank_A], result: false },
+  { args: [pair_of_Q], result: false },
+  { args: [pair_of_3], result: false },
+  { args: [doublePair_of_9], result: { strength: 2, rank: '9', secondaryRank: '3' }  },
+  { args: [threeOfAKind_of_J], result: false },
+  { args: [stright_of_9], result: false },
+  { args: [stright_of_A_top], result: false },
+  { args: [stright_of_A_bottom], result: false },
+  { args: [flush_of_J], result: false },
+  { args: [flush_of_8], result: false },
+  { args: [full_of_7], result: false },
+  { args: [full_of_3], result: false },
+  { args: [poker_of_A], result: false },
+  { args: [strightFlush_of_9], result: false },
+  { args: [strightFlush_of_A_bottom], result: false },
+  { args: [royalStrightFlush], result: false }
+], function(cards) {
+
+  return m.hasDoublePair(cards);
+
+});
