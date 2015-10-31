@@ -159,22 +159,7 @@ tape('check interface', function(t) {
  */
 
 tcase([
-  { description: 'has-highest-card', args: [rank_A], result: { strength: 0, rank: 'A' } },
-  { args: [pair_of_Q], result: { strength: 0, rank: 'Q' } },
-  { args: [pair_of_3], result: { strength: 0, rank: 'Q' } },
-  { args: [doublePair_of_9], result: { strength: 0, rank: 'A' } },
-  { args: [threeOfAKind_of_J], result: { strength: 0, rank: 'J' } },
-  { args: [stright_of_9], result: { strength: 0, rank: '9' } },
-  { args: [stright_of_A_top], result: { strength: 0, rank: 'A' } },
-  { args: [stright_of_A_bottom], result: { strength: 0, rank: 'A' } },
-  { args: [flush_of_J], result: { strength: 0, rank: 'J' } },
-  { args: [flush_of_8], result: { strength: 0, rank: '8' } },
-  { args: [full_of_7], result: { strength: 0, rank: '7' } },
-  { args: [full_of_3], result: { strength: 0, rank: 'A' } },
-  { args: [poker_of_A], result: { strength: 0, rank: 'A' } },
-  { args: [strightFlush_of_9], result: { strength: 0, rank: '9' } },
-  { args: [strightFlush_of_A_bottom], result: { strength: 0, rank: 'A' } },
-  { args: [royalStrightFlush], result: { strength: 0, rank: 'A' } }
+  { description: 'has-highest-card', args: [rank_A], result: { strength: 0, rank: 'A', kickers: ['Q', 'J', '9', '4'] } }
 ], function(cards) {
 
   return m.hasHighestCard(cards);
@@ -188,8 +173,8 @@ tcase([
 
 tcase([
   { description: 'has-pair', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: { strength: 1, rank: 'Q' } },
-  { args: [pair_of_3], result: { strength: 1, rank: '3' } },
+  { args: [pair_of_Q], result: { strength: 1, rank: 'Q', kickers: ['9', '4', '2'] } },
+  { args: [pair_of_3], result: { strength: 1, rank: '3', kickers: ['Q', '9', '4'] } },
   { args: [doublePair_of_9], result: false },
   { args: [threeOfAKind_of_J], result: false },
   { args: [stright_of_9], result: false },
@@ -218,7 +203,7 @@ tcase([
   { description: 'has-double-pair', args: [rank_A], result: false },
   { args: [pair_of_Q], result: false },
   { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: { strength: 2, rank: '9', secondaryRank: '3' }  },
+  { args: [doublePair_of_9], result: { strength: 2, rank: '9', kickers: ['3', 'A'] } },
   { args: [threeOfAKind_of_J], result: false },
   { args: [stright_of_9], result: false },
   { args: [stright_of_A_top], result: false },
