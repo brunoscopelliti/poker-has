@@ -55,21 +55,36 @@ const poker_of_A = [
 
 
 
-
-
-
-
-
 tape('poker-has:', function(t) { t.end(); });
 
 tape('check interface', function(t) {
 
+  t.equal(typeof m.hasHighestCard, 'function', 'has-highest-card is a function');
   t.equal(typeof m.hasPair, 'function', 'has-pair is a function');
 
   t.end();
 
 });
 
+
+/*
+ * hasHighestCard
+ */
+
+tcase([
+  { description: 'has-highest-card', args: [rank_A], result: { strength: 0, rank: 'A' } },
+  { args: [pair_of_Q], result: { strength: 0, rank: 'Q' } },
+  { args: [pair_of_3], result: { strength: 0, rank: 'Q' } }
+], function(cards) {
+
+  return m.hasHighestCard(cards);
+
+});
+
+
+/*
+ * hasPair
+ */
 
 tcase([
   { description: 'has-pair', args: [rank_A], result: false },
