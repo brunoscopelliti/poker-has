@@ -61,6 +61,14 @@ tape('check interface', function(t) {
 
   t.equal(typeof m.hasHighestCard, 'function', 'has-highest-card is a function');
   t.equal(typeof m.hasPair, 'function', 'has-pair is a function');
+  t.equal(typeof m.hasDoublePair, 'function', 'has-double-pair is a function');
+  t.equal(typeof m.hasThreeOfAKind, 'function', 'has-three-of-a-kind is a function');
+  t.equal(typeof m.hasStraight, 'function', 'has-straight is a function');
+  t.equal(typeof m.hasFlush, 'function', 'has-flush is a function');
+  t.equal(typeof m.hasFullHouse, 'function', 'has-full-house is a function');
+  t.equal(typeof m.hasPoker, 'function', 'has-poker is a function');
+  t.equal(typeof m.hasStraightFlush, 'function', 'has-straight-flush is a function');
+  t.equal(typeof m.hasRoyalStraightFlush, 'function', 'has-royal-straight-flush is a function');
 
   t.end();
 
