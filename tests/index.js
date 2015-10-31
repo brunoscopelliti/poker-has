@@ -4,134 +4,133 @@ const tcase = require('tape-case');
 
 const m = require('../index.js');
 
-const rank_A = [
+const rank_A = Object.freeze([
   {rank:'A', type:'H'},
   {rank:'4', type:'H'},
   {rank:'J', type:'S'},
   {rank:'Q', type:'D'},
   {rank:'9', type:'C'}
-];
+]);
 
-const pair_of_Q = [
+const pair_of_Q = Object.freeze([
   {rank:'2', type:'H'},
   {rank:'4', type:'H'},
   {rank:'Q', type:'S'},
   {rank:'Q', type:'D'},
   {rank:'9', type:'C'}
-];
+]);
 
-const pair_of_3 = [
+const pair_of_3 = Object.freeze([
   {rank:'3', type:'H'},
   {rank:'4', type:'H'},
   {rank:'3', type:'S'},
   {rank:'Q', type:'D'},
   {rank:'9', type:'C'}
+]);
 
-];
-
-const doublePair_of_9 = [
+const doublePair_of_9 = Object.freeze([
   {rank:'3', type:'H'},
   {rank:'9', type:'H'},
   {rank:'3', type:'S'},
   {rank:'9', type:'D'},
   {rank:'A', type:'C'}
-];
+]);
 
-const threeOfAKind_of_J = [
+const threeOfAKind_of_J = Object.freeze([
   {rank:'J', type:'H'},
   {rank:'9', type:'D'},
   {rank:'J', type:'S'},
   {rank:'J', type:'C'},
   {rank:'5', type:'C'}
-];
+]);
 
-const stright_of_9 = [
+const stright_of_9 = Object.freeze([
   {rank:'6', type:'H'},
   {rank:'7', type:'D'},
   {rank:'9', type:'S'},
   {rank:'8', type:'C'},
   {rank:'5', type:'C'}
-];
+]);
 
-const stright_of_A_top = [
+const stright_of_A_top = Object.freeze([
   {rank:'K', type:'H'},
   {rank:'J', type:'D'},
   {rank:'A', type:'S'},
   {rank:'10', type:'C'},
   {rank:'Q', type:'C'}
-];
+]);
 
-const stright_of_A_bottom = [
+const stright_of_A_bottom = Object.freeze([
   {rank:'3', type:'H'},
   {rank:'4', type:'D'},
   {rank:'2', type:'S'},
   {rank:'5', type:'C'},
   {rank:'A', type:'C'}
-];
+]);
 
-const flush_of_J = [
+const flush_of_J = Object.freeze([
   {rank:'3', type:'H'},
   {rank:'4', type:'H'},
   {rank:'2', type:'H'},
   {rank:'5', type:'H'},
   {rank:'J', type:'H'}
-];
+]);
 
-const flush_of_8 = [
+const flush_of_8 = Object.freeze([
   {rank:'2', type:'D'},
   {rank:'3', type:'D'},
   {rank:'8', type:'D'},
   {rank:'5', type:'D'},
   {rank:'6', type:'D'}
-];
+]);
 
-const full_of_7 = [
+const full_of_7 = Object.freeze([
   {rank:'7', type:'D'},
   {rank:'7', type:'S'},
   {rank:'2', type:'D'},
   {rank:'7', type:'H'},
   {rank:'2', type:'C'}
-];
+]);
 
-const full_of_3 = [
+const full_of_3 = Object.freeze([
   {rank:'3', type:'D'},
   {rank:'3', type:'S'},
   {rank:'A', type:'D'},
   {rank:'3', type:'H'},
   {rank:'A', type:'C'}
-];
+]);
 
-const poker_of_A = [
+const poker_of_A = Object.freeze([
   {rank:'A', type:'H'},
   {rank:'9', type:'D'},
   {rank:'A', type:'S'},
   {rank:'A', type:'C'},
   {rank:'A', type:'D'}
-];
+]);
 
-const strightFlush_of_9 = [
+const strightFlush_of_9 = Object.freeze([
   {rank:'6', type:'H'},
   {rank:'7', type:'H'},
   {rank:'9', type:'H'},
   {rank:'8', type:'H'},
   {rank:'5', type:'H'}
-];
+]);
 
-const strightFlush_of_A_bottom = [
+const strightFlush_of_A_bottom = Object.freeze([
   {rank:'3', type:'D'},
   {rank:'4', type:'D'},
   {rank:'2', type:'D'},
   {rank:'5', type:'D'},
   {rank:'A', type:'D'}
-];
+]);
 
-const royalStrightFlush = [
+const royalStrightFlush = Object.freeze([
   {rank:'K', type:'C'},
   {rank:'J', type:'C'},
   {rank:'A', type:'C'},
   {rank:'10', type:'C'},
   {rank:'Q', type:'C'}
-];
+]);
 
 
 tape('poker-has:', function(t) { t.end(); });
