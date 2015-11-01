@@ -311,7 +311,7 @@ tcase([
  */
 
 tcase([
-  { description: 'has-flush', args: [rank_A], result: false },
+  { description: 'has-full-house', args: [rank_A], result: false },
   { args: [pair_of_Q], result: false },
   { args: [pair_of_3], result: false },
   { args: [doublePair_of_9], result: false },
