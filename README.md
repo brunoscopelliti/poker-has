@@ -1,2 +1,2 @@
 # poker-has
-Evaluate poker hold'em hands
+Evaluate poker hold'em hands.
