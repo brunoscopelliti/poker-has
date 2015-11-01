@@ -248,3 +248,31 @@ tcase([
   return m.hasThreeOfAKind(cards);
 
 });
+
+
+/*
+ * hasStraight
+ */
+
+tcase([
+  { description: 'has-straight', args: [rank_A], result: false },
+  { args: [pair_of_Q], result: false },
+  { args: [pair_of_3], result: false },
+  { args: [doublePair_of_9], result: false },
+  { args: [threeOfAKind_of_J], result: false },
+  { args: [stright_of_9], result: { strength: 8, rank: '9', kickers: [] } },
+  { args: [stright_of_A_top], result: { strength: 8, rank: 'A', kickers: [] } },
+  { args: [stright_of_A_bottom], result: { strength: 8, rank: '5', kickers: [] } },
+  { args: [flush_of_J], result: false },
+  { args: [flush_of_8], result: false },
+  { args: [full_of_7], result: false },
+  { args: [full_of_3], result: false },
+  { args: [poker_of_A], result: false },
+  { args: [strightFlush_of_9], result: false },
+  { args: [strightFlush_of_A_bottom], result: false },
+  { args: [royalStrightFlush], result: false }
+], function(cards) {
+
+  return m.hasStraight(cards);
+
+});
