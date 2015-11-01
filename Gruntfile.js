@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browserify');
 
     grunt.initConfig({
@@ -17,6 +18,16 @@ module.exports = function (grunt) {
             test: {}
         },
 
+        watch: {
+            options: {
+                livereload: 35729
+            },
+            js: {
+                files: ['./lib/*.js', './lib/**/*.js', './tests/index.js'],
+                tasks: ['browserify:test']
+            }
+        },
+
         browserify: {
             test: {
                 options: {
@@ -29,6 +40,8 @@ module.exports = function (grunt) {
         }
 
     });
+
+    grunt.registerTask('dev', ['watch:js']);
 
     grunt.registerTask('default', ['browserify:test', 'connect:test']);
 
