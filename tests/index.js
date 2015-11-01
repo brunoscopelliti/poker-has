@@ -304,3 +304,31 @@ tcase([
   return m.hasFlush(cards);
 
 });
+
+
+/*
+ * hasFullHouse
+ */
+
+tcase([
+  { description: 'has-flush', args: [rank_A], result: false },
+  { args: [pair_of_Q], result: false },
+  { args: [pair_of_3], result: false },
+  { args: [doublePair_of_9], result: false },
+  { args: [threeOfAKind_of_J], result: false },
+  { args: [stright_of_9], result: false },
+  { args: [stright_of_A_top], result: false },
+  { args: [stright_of_A_bottom], result: false },
+  { args: [flush_of_J], result: false },
+  { args: [flush_of_8], result: false },
+  { args: [full_of_7], result: { strength: 32, rank: '7', kickers: ['2'] } },
+  { args: [full_of_3], result: { strength: 32, rank: '3', kickers: ['A'] } },
+  { args: [poker_of_A], result: false },
+  { args: [strightFlush_of_9], result: false },
+  { args: [strightFlush_of_A_bottom], result: false },
+  { args: [royalStrightFlush], result: false }
+], function(cards) {
+
+  return m.hasFullHouse(cards);
+
+});
