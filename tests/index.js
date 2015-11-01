@@ -276,3 +276,31 @@ tcase([
   return m.hasStraight(cards);
 
 });
+
+
+/*
+ * hasFlush
+ */
+
+tcase([
+  { description: 'has-flush', args: [rank_A], result: false },
+  { args: [pair_of_Q], result: false },
+  { args: [pair_of_3], result: false },
+  { args: [doublePair_of_9], result: false },
+  { args: [threeOfAKind_of_J], result: false },
+  { args: [stright_of_9], result: false },
+  { args: [stright_of_A_top], result: false },
+  { args: [stright_of_A_bottom], result: false },
+  { args: [flush_of_J], result: { strength: 16, rank: 'J', kickers: ['5', '4', '3', '2'] } },
+  { args: [flush_of_8], result: { strength: 16, rank: '8', kickers: ['6', '5', '3', '2'] } },
+  { args: [full_of_7], result: false },
+  { args: [full_of_3], result: false },
+  { args: [poker_of_A], result: false },
+  { args: [strightFlush_of_9], result: false },
+  { args: [strightFlush_of_A_bottom], result: false },
+  { args: [royalStrightFlush], result: false }
+], function(cards) {
+
+  return m.hasFlush(cards);
+
+});
