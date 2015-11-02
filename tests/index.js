@@ -2,7 +2,7 @@
 const tape = require('tape');
 const tcase = require('tape-case');
 
-const m = require('../index.js');
+const has = require('../index.js');
 
 const rank_A = Object.freeze([
   {rank:'A', type:'H'},
@@ -136,283 +136,34 @@ const royalStrightFlush = Object.freeze([
 tape('poker-has:', function(t) { t.end(); });
 
 tape('check interface', function(t) {
-
-  t.equal(typeof m.hasHighestCard, 'function', 'has-highest-card is a function');
-  t.equal(typeof m.hasPair, 'function', 'has-pair is a function');
-  t.equal(typeof m.hasDoublePair, 'function', 'has-double-pair is a function');
-  t.equal(typeof m.hasThreeOfAKind, 'function', 'has-three-of-a-kind is a function');
-  t.equal(typeof m.hasStraight, 'function', 'has-straight is a function');
-  t.equal(typeof m.hasFlush, 'function', 'has-flush is a function');
-  t.equal(typeof m.hasFullHouse, 'function', 'has-full-house is a function');
-  t.equal(typeof m.hasPoker, 'function', 'has-poker is a function');
-  t.equal(typeof m.hasStraightFlush, 'function', 'has-straight-flush is a function');
-  t.equal(typeof m.hasRoyalStraightFlush, 'function', 'has-royal-straight-flush is a function');
-
+  t.equal(typeof has, 'function', 'has is a function');
   t.end();
-
 });
 
 
 /*
- * hasHighestCard
+ * has
  */
 
 tcase([
-  { description: 'has-highest-card', args: [rank_A], result: { strength: 0, rank: 'A', kickers: ['Q', 'J', '9', '4'] } }
+  { description: 'highest-card', args: [rank_A], result: { strength: 0, rank: 'A', kickers: ['Q', 'J', '9', '4'] } },
+  { description: 'pair of Q', args: [pair_of_Q], result: { strength: 1, rank: 'Q', kickers: ['9', '4', '2'] } },
+  { description: 'pair of 3', args: [pair_of_3], result: { strength: 1, rank: '3', kickers: ['Q', '9', '4'] } },
+  { description: 'double-pair', args: [doublePair_of_9], result: { strength: 2, rank: '9', kickers: ['3', 'A'] } },
+  { description: 'three-of-a-kind', args: [threeOfAKind_of_J], result: { strength: 4, rank: 'J', kickers: ['9', '5'] } },
+  { description: 'straight of 9', args: [stright_of_9], result: { strength: 8, rank: '9', kickers: [] } },
+  { description: 'straight of A top', args: [stright_of_A_top], result: { strength: 8, rank: 'A', kickers: [] } },
+  { description: 'straight of A bottom', args: [stright_of_A_bottom], result: { strength: 8, rank: '5', kickers: [] } },
+  { description: 'flush of J', args: [flush_of_J], result: { strength: 16, rank: 'J', kickers: ['5', '4', '3', '2'] } },
+  { description: 'flush of 8', args: [flush_of_8], result: { strength: 16, rank: '8', kickers: ['6', '5', '3', '2'] } },
+  { description: 'full-house of 7', args: [full_of_7], result: { strength: 32, rank: '7', kickers: ['2'] } },
+  { description: 'full-house of 3', args: [full_of_3], result: { strength: 32, rank: '3', kickers: ['A'] } },
+  { description: 'poker', args: [poker_of_A], result: { strength: 64, rank: 'A', kickers: ['9'] } },
+  { description: 'stright-flush of 9', args: [strightFlush_of_9], result: { strength: 128, rank: '9', kickers: [] } },
+  { description: 'stright-flush of A bottom', args: [strightFlush_of_A_bottom], result: { strength: 128, rank: '5', kickers: [] } },
+  { description: 'royal-stright-flush', args: [royalStrightFlush], result: { strength: 256, rank: 'A', kickers: [] } }
 ], function(cards) {
 
-  return m.hasHighestCard(cards);
-
-});
-
-
-/*
- * hasPair
- */
-
-tcase([
-  { description: 'has-pair', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: { strength: 1, rank: 'Q', kickers: ['9', '4', '2'] } },
-  { args: [pair_of_3], result: { strength: 1, rank: '3', kickers: ['Q', '9', '4'] } },
-  { args: [doublePair_of_9], result: false },
-  { args: [threeOfAKind_of_J], result: false },
-  { args: [stright_of_9], result: false },
-  { args: [stright_of_A_top], result: false },
-  { args: [stright_of_A_bottom], result: false },
-  { args: [flush_of_J], result: false },
-  { args: [flush_of_8], result: false },
-  { args: [full_of_7], result: false },
-  { args: [full_of_3], result: false },
-  { args: [poker_of_A], result: false },
-  { args: [strightFlush_of_9], result: false },
-  { args: [strightFlush_of_A_bottom], result: false },
-  { args: [royalStrightFlush], result: false }
-], function(cards) {
-
-  return m.hasPair(cards);
-
-});
-
-
-/*
- * hasDoublePair
- */
-
-tcase([
-  { description: 'has-double-pair', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: false },
-  { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: { strength: 2, rank: '9', kickers: ['3', 'A'] } },
-  { args: [threeOfAKind_of_J], result: false },
-  { args: [stright_of_9], result: false },
-  { args: [stright_of_A_top], result: false },
-  { args: [stright_of_A_bottom], result: false },
-  { args: [flush_of_J], result: false },
-  { args: [flush_of_8], result: false },
-  { args: [full_of_7], result: false },
-  { args: [full_of_3], result: false },
-  { args: [poker_of_A], result: false },
-  { args: [strightFlush_of_9], result: false },
-  { args: [strightFlush_of_A_bottom], result: false },
-  { args: [royalStrightFlush], result: false }
-], function(cards) {
-
-  return m.hasDoublePair(cards);
-
-});
-
-
-/*
- * hasThreeOfAKind
- */
-
-tcase([
-  { description: 'has-three-of-a-kind', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: false },
-  { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: false },
-  { args: [threeOfAKind_of_J], result: { strength: 4, rank: 'J', kickers: ['9', '5'] } },
-  { args: [stright_of_9], result: false },
-  { args: [stright_of_A_top], result: false },
-  { args: [stright_of_A_bottom], result: false },
-  { args: [flush_of_J], result: false },
-  { args: [flush_of_8], result: false },
-  { args: [full_of_7], result: false },
-  { args: [full_of_3], result: false },
-  { args: [poker_of_A], result: false },
-  { args: [strightFlush_of_9], result: false },
-  { args: [strightFlush_of_A_bottom], result: false },
-  { args: [royalStrightFlush], result: false }
-], function(cards) {
-
-  return m.hasThreeOfAKind(cards);
-
-});
-
-
-/*
- * hasStraight
- */
-
-tcase([
-  { description: 'has-straight', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: false },
-  { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: false },
-  { args: [threeOfAKind_of_J], result: false },
-  { args: [stright_of_9], result: { strength: 8, rank: '9', kickers: [] } },
-  { args: [stright_of_A_top], result: { strength: 8, rank: 'A', kickers: [] } },
-  { args: [stright_of_A_bottom], result: { strength: 8, rank: '5', kickers: [] } },
-  { args: [flush_of_J], result: false },
-  { args: [flush_of_8], result: false },
-  { args: [full_of_7], result: false },
-  { args: [full_of_3], result: false },
-  { args: [poker_of_A], result: false },
-  { args: [strightFlush_of_9], result: false },
-  { args: [strightFlush_of_A_bottom], result: false },
-  { args: [royalStrightFlush], result: false }
-], function(cards) {
-
-  return m.hasStraight(cards);
-
-});
-
-
-/*
- * hasFlush
- */
-
-tcase([
-  { description: 'has-flush', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: false },
-  { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: false },
-  { args: [threeOfAKind_of_J], result: false },
-  { args: [stright_of_9], result: false },
-  { args: [stright_of_A_top], result: false },
-  { args: [stright_of_A_bottom], result: false },
-  { args: [flush_of_J], result: { strength: 16, rank: 'J', kickers: ['5', '4', '3', '2'] } },
-  { args: [flush_of_8], result: { strength: 16, rank: '8', kickers: ['6', '5', '3', '2'] } },
-  { args: [full_of_7], result: false },
-  { args: [full_of_3], result: false },
-  { args: [poker_of_A], result: false },
-  { args: [strightFlush_of_9], result: false },
-  { args: [strightFlush_of_A_bottom], result: false },
-  { args: [royalStrightFlush], result: false }
-], function(cards) {
-
-  return m.hasFlush(cards);
-
-});
-
-
-/*
- * hasFullHouse
- */
-
-tcase([
-  { description: 'has-full-house', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: false },
-  { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: false },
-  { args: [threeOfAKind_of_J], result: false },
-  { args: [stright_of_9], result: false },
-  { args: [stright_of_A_top], result: false },
-  { args: [stright_of_A_bottom], result: false },
-  { args: [flush_of_J], result: false },
-  { args: [flush_of_8], result: false },
-  { args: [full_of_7], result: { strength: 32, rank: '7', kickers: ['2'] } },
-  { args: [full_of_3], result: { strength: 32, rank: '3', kickers: ['A'] } },
-  { args: [poker_of_A], result: false },
-  { args: [strightFlush_of_9], result: false },
-  { args: [strightFlush_of_A_bottom], result: false },
-  { args: [royalStrightFlush], result: false }
-], function(cards) {
-
-  return m.hasFullHouse(cards);
-
-});
-
-
-/*
- * hasPoker
- */
-
-tcase([
-  { description: 'has-poker', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: false },
-  { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: false },
-  { args: [threeOfAKind_of_J], result: false },
-  { args: [stright_of_9], result: false },
-  { args: [stright_of_A_top], result: false },
-  { args: [stright_of_A_bottom], result: false },
-  { args: [flush_of_J], result: false },
-  { args: [flush_of_8], result: false },
-  { args: [full_of_7], result: false },
-  { args: [full_of_3], result: false },
-  { args: [poker_of_A], result: { strength: 64, rank: 'A', kickers: ['9'] } },
-  { args: [strightFlush_of_9], result: false },
-  { args: [strightFlush_of_A_bottom], result: false },
-  { args: [royalStrightFlush], result: false }
-], function(cards) {
-
-  return m.hasPoker(cards);
-
-});
-
-
-/*
- * hasStraightFlush
- */
-
-tcase([
-  { description: 'has-straight-flush', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: false },
-  { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: false },
-  { args: [threeOfAKind_of_J], result: false },
-  { args: [stright_of_9], result: false },
-  { args: [stright_of_A_top], result: false },
-  { args: [stright_of_A_bottom], result: false },
-  { args: [flush_of_J], result: false },
-  { args: [flush_of_8], result: false },
-  { args: [full_of_7], result: false },
-  { args: [full_of_3], result: false },
-  { args: [poker_of_A], result: false },
-  { args: [strightFlush_of_9], result: { strength: 128, rank: '9', kickers: [] } },
-  { args: [strightFlush_of_A_bottom], result: { strength: 128, rank: '5', kickers: [] } },
-  { args: [royalStrightFlush], result: false }
-], function(cards) {
-
-  return m.hasStraightFlush(cards);
-
-});
-
-
-/*
- * hasRoyalStraightFlush
- */
-
-tcase([
-  { description: 'has-royal-straight-flush', args: [rank_A], result: false },
-  { args: [pair_of_Q], result: false },
-  { args: [pair_of_3], result: false },
-  { args: [doublePair_of_9], result: false },
-  { args: [threeOfAKind_of_J], result: false },
-  { args: [stright_of_9], result: false },
-  { args: [stright_of_A_top], result: false },
-  { args: [stright_of_A_bottom], result: false },
-  { args: [flush_of_J], result: false },
-  { args: [flush_of_8], result: false },
-  { args: [full_of_7], result: false },
-  { args: [full_of_3], result: false },
-  { args: [poker_of_A], result: false },
-  { args: [strightFlush_of_9], result: false },
-  { args: [strightFlush_of_A_bottom], result: false },
-  { args: [royalStrightFlush], result: { strength: 256, rank: 'A', kickers: [] } }
-], function(cards) {
-
-  return m.hasRoyalStraightFlush(cards);
+  return has(cards);
 
 });
