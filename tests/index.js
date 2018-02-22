@@ -132,6 +132,13 @@ const royalStrightFlush = Object.freeze([
   {rank:'Q', type:'C'}
 ]);
 
+const doublePair_issue1 = Object.freeze([
+  {rank:'K', type:'H'},
+  {rank:'K', type:'D'},
+  {rank:'Q', type:'S'},
+  {rank:'Q', type:'C'},
+  {rank:'5', type:'C'}
+]);
 
 tape('poker-has:', function(t) { t.end(); });
 
@@ -150,6 +157,7 @@ tcase([
   { description: 'pair of Q', args: [pair_of_Q], result: { strength: 1, rank: 'Q', kickers: ['9', '4', '2'] } },
   { description: 'pair of 3', args: [pair_of_3], result: { strength: 1, rank: '3', kickers: ['Q', '9', '4'] } },
   { description: 'double-pair', args: [doublePair_of_9], result: { strength: 2, rank: '9', kickers: ['3', 'A'] } },
+  { description: 'double-pair / issue #1', args: [doublePair_issue1], result: { strength: 2, rank: 'K', kickers: [ 'Q', '5' ] } },
   { description: 'three-of-a-kind', args: [threeOfAKind_of_J], result: { strength: 4, rank: 'J', kickers: ['9', '5'] } },
   { description: 'straight of 9', args: [stright_of_9], result: { strength: 8, rank: '9', kickers: [] } },
   { description: 'straight of A top', args: [stright_of_A_top], result: { strength: 8, rank: 'A', kickers: [] } },
