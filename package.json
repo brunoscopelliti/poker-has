@@ -4,7 +4,7 @@
   "description": "Evaluate poker hold'em hands",
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/index.js"
+    "test": "tap tests/*.js"
   },
   "repository": {
     "type": "git",
@@ -12,10 +12,9 @@
   },
   "keywords": [
     "poker",
-    "texas",
-    "hold'em",
-    "evaluate",
-    "has"
+    "texas hold'em",
+    "evaluate poker hands",
+    "hold'em poker"
   ],
   "author": "Bruno Scopelliti",
   "license": "MIT",
@@ -24,11 +23,6 @@
   },
   "homepage": "https://github.com/brunoscopelliti/poker-has",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-browserify": "^4.0.1",
-    "grunt-contrib-connect": "^0.11.2",
-    "grunt-contrib-watch": "^0.6.1",
-    "tape": "^4.2.2",
-    "tape-case": "^1.0.1"
+    "tap": "11.1.1"
   }
 }
