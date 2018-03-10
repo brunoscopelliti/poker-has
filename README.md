@@ -8,24 +8,22 @@ npm i poker-has --save
 
 ## About poker-has
 
-poker-has does just a simple thing: it tries (and always succeed) to guess the strength of a given poker combination. It always succeed mostly because you've to call it passing the cards... however when it knows the cards, he perfectly knows if you have a simple pair, a poker, or a royal flush straight.
-
-poker-has exports only a method:
+**poker-has** does just a simple thing: it tries to guess the strength of a given poker combination. It exports only one method:
 
 ```
 const whatIs = require('poker-has');
 ```
 
-This `whatIs` function expects to be called with an array of five cards.
-A card is an object with properties `rank`, and `type`, like the one used by [poker-deck](https://github.com/brunoscopelliti/poker-deck).
+This `whatIs` function expects to be called with an array of five *cards*.
+A `card` is an object with properties `rank`, and `type`, like the one used by [poker-deck](https://github.com/brunoscopelliti/poker-deck).
 
 ```
 whatIs([
-  {rank:'6', type:'H'},
-  {rank:'7', type:'D'},
-  {rank:'9', type:'S'},
-  {rank:'8', type:'C'},
-  {rank:'5', type:'C'}
+  { rank: "6", type: "H" },
+  { rank: "7", type: "D" },
+  { rank: "9", type: "S" },
+  { rank: "8", type: "C" },
+  { rank: "5", type: "C" }
 ]);
 ```
 
@@ -33,16 +31,16 @@ This is a straight of 9... however `poker-has` know this is a combination with a
 
 ```
 whatIs([
-  {rank:'2', type:'D'},
-  {rank:'3', type:'D'},
-  {rank:'J', type:'D'},
-  {rank:'5', type:'D'},
-  {rank:'6', type:'D'}
+  { rank: "2", type: "D" },
+  { rank: "3", type: "D" },
+  { rank: "J", type: "D" },
+  { rank: "5", type: "D" },
+  { rank: "6", type: "D" }
 ]);
 ```
 
-This is a flush, and the highest card is Jack... for `poker-has` this combination has a strength of **16**. In this case the expected result is:
+This is a flush, and the highest card is Jack; so this combination has a strength of **16**. In this case the expected result is:
 
-``
+```
 { strength: 16, rank: 'J', kickers: ['6', '5', '3', '2'] }
-``
+```

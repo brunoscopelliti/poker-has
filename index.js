@@ -1,4 +1,3 @@
+"use strict";
 
-'use strict';
-
-exports = module.exports = require('./lib/has');
+module.exports = require("./lib/has");
