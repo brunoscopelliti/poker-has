@@ -11,7 +11,7 @@ test("Pair of Q", (t) => {
     card("4", "H"),
     card("Q", "S"),
     card("Q", "D"),
-    card("9", "C")
+    card("9", "C"),
   ]);
 
   t.strictDeepEqual(has(cards), { strength: 1, rank: "Q", kickers: ["9", "4", "2"] });
@@ -24,8 +24,21 @@ test("Pair of 3", (t) => {
     card("4", "H"),
     card("3", "S"),
     card("Q", "D"),
-    card("9", "C")
+    card("9", "C"),
   ]);
 
   t.strictDeepEqual(has(cards), { strength: 1, rank: "3", kickers: ["Q", "9", "4"] });
+});
+
+test("Pair of 2", (t) => {
+  t.plan(1);
+  const cards = Object.freeze([
+    card("2", "H"),
+    card("A", "H"),
+    card("2", "S"),
+    card("J", "D"),
+    card("Q", "C"),
+  ]);
+
+  t.strictDeepEqual(has(cards), { strength: 1, rank: "2", kickers: ["A", "Q", "J"] });
 });

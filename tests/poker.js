@@ -11,7 +11,7 @@ test("Poker of A", (t) => {
     card("9", "D"),
     card("A", "S"),
     card("A", "C"),
-    card("A", "D")
+    card("A", "D"),
   ]);
 
   t.strictDeepEqual(has(cards), { strength: 64, rank: "A", kickers: ["9"] });
@@ -24,7 +24,7 @@ test("Poker of 3", (t) => {
     card("4", "D"),
     card("3", "S"),
     card("3", "C"),
-    card("3", "D")
+    card("3", "D"),
   ]);
 
   t.strictDeepEqual(has(cards), { strength: 64, rank: "3", kickers: ["4"] });
