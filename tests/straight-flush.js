@@ -20,14 +20,27 @@ test("Straight Flush rank 9", (t) => {
 test("Straight Flush rank 6", (t) => {
   t.plan(1);
   const cards = Object.freeze([
-    card("6", "H"),
-    card("2", "H"),
-    card("3", "H"),
-    card("5", "H"),
-    card("4", "H"),
+    card("6", "C"),
+    card("2", "C"),
+    card("3", "C"),
+    card("5", "C"),
+    card("4", "C"),
   ]);
 
   t.strictDeepEqual(has(cards), { strength: 128, rank: "6", kickers: [] });
+});
+
+test("Straight Flush rank 10", (t) => {
+  t.plan(1);
+  const cards = Object.freeze([
+    card("10", "C"),
+    card("7", "C"),
+    card("8", "C"),
+    card("9", "C"),
+    card("6", "C"),
+  ]);
+
+  t.strictDeepEqual(has(cards), { strength: 128, rank: "10", kickers: [] });
 });
 
 test("Straight Flush of A Low", (t) => {

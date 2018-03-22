@@ -30,6 +30,19 @@ test("Straight to 6", (t) => {
   t.strictDeepEqual(has(cards), { strength: 8, rank: "6", kickers: [] });
 });
 
+test("Straight to 10", (t) => {
+  t.plan(1);
+  const cards = Object.freeze([
+    card("6", "H"),
+    card("8", "D"),
+    card("9", "S"),
+    card("7", "C"),
+    card("10", "C"),
+  ]);
+
+  t.strictDeepEqual(has(cards), { strength: 8, rank: "10", kickers: [] });
+});
+
 test("Straight to A High", (t) => {
   t.plan(1);
   const cards = Object.freeze([

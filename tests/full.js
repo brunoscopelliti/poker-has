@@ -43,6 +43,32 @@ test("Full of 2 and 7", (t) => {
   t.strictDeepEqual(has(cards), { strength: 32, rank: "2", kickers: ["7"] });
 });
 
+test("Full of 10 and J", (t) => {
+  t.plan(1);
+  const cards = Object.freeze([
+    card("J", "D"),
+    card("10", "S"),
+    card("10", "D"),
+    card("J", "H"),
+    card("10", "C"),
+  ]);
+
+  t.strictDeepEqual(has(cards), { strength: 32, rank: "10", kickers: ["J"] });
+});
+
+test("Full of J and 10", (t) => {
+  t.plan(1);
+  const cards = Object.freeze([
+    card("J", "D"),
+    card("J", "S"),
+    card("10", "D"),
+    card("J", "H"),
+    card("10", "C"),
+  ]);
+
+  t.strictDeepEqual(has(cards), { strength: 32, rank: "J", kickers: ["10"] });
+});
+
 test("Full of 3 and A", (t) => {
   t.plan(1);
   const cards = Object.freeze([

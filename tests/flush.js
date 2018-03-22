@@ -46,12 +46,12 @@ test("Flush D rank 8", (t) => {
 test("Flush S rank K", (t) => {
   t.plan(1);
   const cards = Object.freeze([
-    card("9", "S"),
+    card("10", "S"),
     card("K", "S"),
     card("J", "S"),
     card("Q", "S"),
     card("2", "S"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 16, rank: "K", kickers: ["Q", "J", "9", "2"] });
+  t.strictDeepEqual(has(cards), { strength: 16, rank: "K", kickers: ["Q", "J", "10", "2"] });
 });

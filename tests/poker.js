@@ -29,3 +29,16 @@ test("Poker of 3", (t) => {
 
   t.strictDeepEqual(has(cards), { strength: 64, rank: "3", kickers: ["4"] });
 });
+
+test("Poker of 10", (t) => {
+  t.plan(1);
+  const cards = Object.freeze([
+    card("10", "H"),
+    card("4", "D"),
+    card("10", "S"),
+    card("10", "C"),
+    card("10", "D"),
+  ]);
+
+  t.strictDeepEqual(has(cards), { strength: 64, rank: "10", kickers: ["4"] });
+});

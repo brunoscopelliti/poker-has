@@ -43,6 +43,19 @@ test("High card is Q", (t) => {
   t.strictDeepEqual(has(cards), { strength: 0, rank: "Q", kickers: ["J", "9", "4", "2"] });
 });
 
+test("High card is 10", (t) => {
+  t.plan(1);
+  const cards = Object.freeze([
+    card("2", "H"),
+    card("4", "H"),
+    card("5", "S"),
+    card("10", "D"),
+    card("9", "C"),
+  ]);
+
+  t.strictDeepEqual(has(cards), { strength: 0, rank: "10", kickers: ["9", "5", "4", "2"] });
+});
+
 test("Almost straight", (t) => {
   t.plan(1);
   const cards = Object.freeze([
