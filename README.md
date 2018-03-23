@@ -39,7 +39,7 @@ whatIs([
 ]);
 ```
 
-This is a flush, and the highest card is Jack; so this combination has a strength of **16**. In this case the expected result is:
+This is a flush, and the highest card is Jack; so this combination has a strength of **5**. In this case the expected result is:
 
 ```
 { name: "Flush", strength: 5, rank: "J", kickers: ["6", "5", "3", "2"] }
