@@ -27,7 +27,7 @@ whatIs([
 ]);
 ```
 
-This is a straight of 9... however `poker-has` know this is a combination with a strength of **8** compared to the other possible poker combinations.
+This is a straight of 9... however `poker-has` know this is a combination with a strength of **4** compared to the other possible poker combinations.
 
 ```
 whatIs([
@@ -42,5 +42,5 @@ whatIs([
 This is a flush, and the highest card is Jack; so this combination has a strength of **16**. In this case the expected result is:
 
 ```
-{ strength: 16, rank: "J", kickers: ["6", "5", "3", "2"] }
+{ name: "Flush", strength: 5, rank: "J", kickers: ["6", "5", "3", "2"] }
 ```
