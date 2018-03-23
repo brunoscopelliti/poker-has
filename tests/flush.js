@@ -14,7 +14,7 @@ test("Flush C rank A", (t) => {
     card("5", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 16, rank: "A", kickers: ["K", "J", "10", "5"] });
+  t.strictDeepEqual(has(cards), { name: "Flush", strength: 5, rank: "A", kickers: ["K", "J", "10", "5"] });
 });
 
 test("Flush H rank Q", (t) => {
@@ -27,7 +27,7 @@ test("Flush H rank Q", (t) => {
     card("9", "H"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 16, rank: "Q", kickers: ["9", "7", "4", "2"] });
+  t.strictDeepEqual(has(cards), { name: "Flush", strength: 5, rank: "Q", kickers: ["9", "7", "4", "2"] });
 });
 
 test("Flush D rank 8", (t) => {
@@ -40,7 +40,7 @@ test("Flush D rank 8", (t) => {
     card("6", "D"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 16, rank: "8", kickers: ["6", "5", "3", "2"] });
+  t.strictDeepEqual(has(cards), { name: "Flush", strength: 5, rank: "8", kickers: ["6", "5", "3", "2"] });
 });
 
 test("Flush S rank K", (t) => {
@@ -53,5 +53,5 @@ test("Flush S rank K", (t) => {
     card("2", "S"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 16, rank: "K", kickers: ["Q", "J", "10", "2"] });
+  t.strictDeepEqual(has(cards), { name: "Flush", strength: 5, rank: "K", kickers: ["Q", "J", "10", "2"] });
 });

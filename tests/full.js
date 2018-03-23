@@ -14,7 +14,7 @@ test("Full of 7 and 2", (t) => {
     card("2", "C"),
   ]);
 
-  t.strictSame(has(cards), { strength: 32, rank: "7", kickers: ["2"] });
+  t.strictSame(has(cards), { name: "Full House", strength: 6, rank: "7", kickers: ["2"] });
 });
 
 test("Full of 7 and 2 / 2", (t) => {
@@ -27,7 +27,7 @@ test("Full of 7 and 2 / 2", (t) => {
     card("7", "H"),
   ]);
 
-  t.strictSame(has(cards), { strength: 32, rank: "7", kickers: ["2"] });
+  t.strictSame(has(cards), { name: "Full House", strength: 6, rank: "7", kickers: ["2"] });
 });
 
 test("Full of 2 and 7", (t) => {
@@ -40,7 +40,7 @@ test("Full of 2 and 7", (t) => {
     card("2", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 32, rank: "2", kickers: ["7"] });
+  t.strictDeepEqual(has(cards), { name: "Full House", strength: 6, rank: "2", kickers: ["7"] });
 });
 
 test("Full of 10 and J", (t) => {
@@ -53,7 +53,7 @@ test("Full of 10 and J", (t) => {
     card("10", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 32, rank: "10", kickers: ["J"] });
+  t.strictDeepEqual(has(cards), { name: "Full House", strength: 6, rank: "10", kickers: ["J"] });
 });
 
 test("Full of J and 10", (t) => {
@@ -66,7 +66,7 @@ test("Full of J and 10", (t) => {
     card("10", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 32, rank: "J", kickers: ["10"] });
+  t.strictDeepEqual(has(cards), { name: "Full House", strength: 6, rank: "J", kickers: ["10"] });
 });
 
 test("Full of 3 and A", (t) => {
@@ -79,5 +79,5 @@ test("Full of 3 and A", (t) => {
     card("A", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 32, rank: "3", kickers: ["A"] });
+  t.strictDeepEqual(has(cards), { name: "Full House", strength: 6, rank: "3", kickers: ["A"] });
 });

@@ -14,7 +14,7 @@ test("Straight Flush rank 9", (t) => {
     card("5", "H"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 128, rank: "9", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight Flush", strength: 8, rank: "9", kickers: [] });
 });
 
 test("Straight Flush rank 6", (t) => {
@@ -27,7 +27,7 @@ test("Straight Flush rank 6", (t) => {
     card("4", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 128, rank: "6", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight Flush", strength: 8, rank: "6", kickers: [] });
 });
 
 test("Straight Flush rank 10", (t) => {
@@ -40,7 +40,7 @@ test("Straight Flush rank 10", (t) => {
     card("6", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 128, rank: "10", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight Flush", strength: 8, rank: "10", kickers: [] });
 });
 
 test("Straight Flush of A Low", (t) => {
@@ -53,5 +53,5 @@ test("Straight Flush of A Low", (t) => {
     card("A", "D"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 128, rank: "5", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight Flush", strength: 8, rank: "5", kickers: [] });
 });

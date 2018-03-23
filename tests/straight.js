@@ -14,7 +14,7 @@ test("Straight to 9", (t) => {
     card("5", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 8, rank: "9", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight", strength: 4, rank: "9", kickers: [] });
 });
 
 test("Straight to 6", (t) => {
@@ -27,7 +27,7 @@ test("Straight to 6", (t) => {
     card("2", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 8, rank: "6", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight", strength: 4, rank: "6", kickers: [] });
 });
 
 test("Straight to 10", (t) => {
@@ -40,7 +40,7 @@ test("Straight to 10", (t) => {
     card("10", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 8, rank: "10", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight", strength: 4, rank: "10", kickers: [] });
 });
 
 test("Straight to A High", (t) => {
@@ -53,7 +53,7 @@ test("Straight to A High", (t) => {
     card("Q", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 8, rank: "A", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight", strength: 4, rank: "A", kickers: [] });
 });
 
 test("Straight to A Low", (t) => {
@@ -66,5 +66,5 @@ test("Straight to A Low", (t) => {
     card("4", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { strength: 8, rank: "5", kickers: [] });
+  t.strictDeepEqual(has(cards), { name: "Straight", strength: 4, rank: "5", kickers: [] });
 });
