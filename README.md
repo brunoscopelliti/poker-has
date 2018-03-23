@@ -11,7 +11,7 @@ npm i poker-has --save
 **poker-has** does just a simple thing: it tries to guess the strength of a given poker combination. It exports only one method:
 
 ```
-const whatIs = require('poker-has');
+const whatIs = require("poker-has");
 ```
 
 This `whatIs` function expects to be called with an array of five *cards*.
@@ -42,5 +42,5 @@ whatIs([
 This is a flush, and the highest card is Jack; so this combination has a strength of **16**. In this case the expected result is:
 
 ```
-{ strength: 16, rank: 'J', kickers: ['6', '5', '3', '2'] }
+{ strength: 16, rank: "J", kickers: ["6", "5", "3", "2"] }
 ```
