@@ -8,13 +8,13 @@ npm i poker-has --save
 
 ## About poker-has
 
-**poker-has** does just a simple thing: it tries to guess the strength of a given poker combination. It exports only one method:
+**poker-has** does just one thing: it tries to guess the strength of a given poker combination. It exports only one method:
 
 ```
 const whatIs = require("poker-has");
 ```
 
-This `whatIs` function expects to be called with an array of five *cards*.
+The `whatIs` function expects to be called with an array of five *cards*.
 A `card` is an object with properties `rank`, and `type`, like the one used by [poker-deck](https://github.com/brunoscopelliti/poker-deck).
 
 ```

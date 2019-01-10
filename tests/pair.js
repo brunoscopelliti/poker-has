@@ -55,3 +55,16 @@ test("Pair of 2", (t) => {
 
   t.strictDeepEqual(has(cards), { name: "Pair", strength: 1, rank: "2", kickers: ["A", "Q", "J"] });
 });
+
+test("A different pair of 2", (t) => {
+  t.plan(1);
+  const cards = Object.freeze([
+    card("2", "H"),
+    card("A", "H"),
+    card("2", "S"),
+    card("Q", "D"),
+    card("J", "C"),
+  ]);
+
+  t.strictDeepEqual(has(cards), { name: "Pair", strength: 1, rank: "2", kickers: ["A", "Q", "J"] });
+});

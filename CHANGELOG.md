@@ -1,5 +1,11 @@
 # Changelog
 
+## 12/01/2019 v4.0.0
+
+* [Breaking?] Removed dependency from `ramda`.
+
+* `ramda`-less rewrite.
+
 ## 23/03/2018 v3.0.0
 
 * [Breaking] Changed combination strength levels, and added the combination name.
