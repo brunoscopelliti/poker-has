@@ -1,10 +1,14 @@
 # Changelog
 
+## 12/01/2019 v4.0.1
+
+* Improved README.md
+
 ## 12/01/2019 v4.0.0
 
 * [Breaking?] Removed dependency from `ramda`.
 
-* `ramda`-less rewrite.
+* `ramda`-less rewrite... public methods, and return types are not affected by this rewrite.
 
 ## 23/03/2018 v3.0.0
 
