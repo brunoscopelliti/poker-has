@@ -1,3 +1,5 @@
+"use strict";
+
 const has = require("../index.js");
 const card = require("./utils/card");
 
