@@ -1,17 +1,17 @@
-# poker-has
+# @botpoker/hand
 
-You can install [poker-has](https://www.npmjs.com/package/poker-has) via npm:
+You can install [@botpoker/hand](https://www.npmjs.com/package/@botpoker/hand) via npm:
 
 ```
-npm i poker-has --save
+npm i @botpoker/hand --save
 ```
 
-## About poker-has
+## About @botpoker/hand
 
-**poker-has** does just one thing: it tries to guess the strength of a given poker combination. It exports only one method:
+**@botpoker/hand** does just one thing: it tries to guess the strength of a given poker combination. It exports only one method:
 
 ```js
-const whatIs = require("poker-has");
+const whatIs = require("@botpoker/hand");
 ```
 
 The `whatIs` function expects to be called with an array of five *cards*.
@@ -27,7 +27,7 @@ whatIs([
 ]);
 ```
 
-This is a straight of 9... however `poker-has` know this is a combination with a strength of **4** compared to the other possible poker combinations.
+This is a straight of 9... however `@botpoker/hand` know this is a combination with a strength of **4** compared to the other possible poker combinations.
 
 ```js
 whatIs([
@@ -43,9 +43,9 @@ This is a flush, and the highest card is Jack; so this combination has a strengt
 
 ```js
 { 
-  name: "Flush", 
-  strength: 5, 
-  rank: "J", 
+  name: "Flush",
+  strength: 5,
+  rank: "J",
   kickers: ["6", "5", "3", "2"],
 }
 ```

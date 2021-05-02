@@ -1,6 +1,6 @@
 {
-  "name": "poker-has",
-  "version": "4.0.2",
+  "name": "@botpoker/hand",
+  "version": "1.0.0",
   "description": "Evaluate poker hold'em hands",
   "main": "index.js",
   "scripts": {
