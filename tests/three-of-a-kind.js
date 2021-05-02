@@ -16,7 +16,7 @@ test("Three of a kind of J", (t) => {
     card("5", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Three of a kind", strength: 3, rank: "J", kickers: ["9", "5"] });
+  t.strictSame(has(cards), { name: "Three of a kind", strength: 3, rank: "J", kickers: ["9", "5"] });
 });
 
 test("Three of a kind of 10", (t) => {
@@ -29,7 +29,7 @@ test("Three of a kind of 10", (t) => {
     card("K", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Three of a kind", strength: 3, rank: "10", kickers: ["A", "K"] });
+  t.strictSame(has(cards), { name: "Three of a kind", strength: 3, rank: "10", kickers: ["A", "K"] });
 });
 
 test("Three of a kind of 7", (t) => {
@@ -42,5 +42,5 @@ test("Three of a kind of 7", (t) => {
     card("A", "H"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Three of a kind", strength: 3, rank: "7", kickers: ["A", "K"] });
+  t.strictSame(has(cards), { name: "Three of a kind", strength: 3, rank: "7", kickers: ["A", "K"] });
 });

@@ -16,7 +16,7 @@ test("Double Pair of 9 and 3 / 1", (t) => {
     card("A", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Double Pair", strength: 2, rank: "9", kickers: ["3", "A"] });
+  t.strictSame(has(cards), { name: "Double Pair", strength: 2, rank: "9", kickers: ["3", "A"] });
 });
 
 test("Double Pair of 9 and 3 / 2", (t) => {
@@ -29,7 +29,7 @@ test("Double Pair of 9 and 3 / 2", (t) => {
     card("4", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Double Pair", strength: 2, rank: "9", kickers: ["3", "4"] });
+  t.strictSame(has(cards), { name: "Double Pair", strength: 2, rank: "9", kickers: ["3", "4"] });
 });
 
 test("Double Pair of 9 and 3 / 3", (t) => {
@@ -42,7 +42,7 @@ test("Double Pair of 9 and 3 / 3", (t) => {
     card("2", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Double Pair", strength: 2, rank: "9", kickers: ["3", "2"] });
+  t.strictSame(has(cards), { name: "Double Pair", strength: 2, rank: "9", kickers: ["3", "2"] });
 });
 
 test("Double Pair of 10 and 8", (t) => {
@@ -55,7 +55,7 @@ test("Double Pair of 10 and 8", (t) => {
     card("A", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Double Pair", strength: 2, rank: "10", kickers: ["8", "A"] });
+  t.strictSame(has(cards), { name: "Double Pair", strength: 2, rank: "10", kickers: ["8", "A"] });
 });
 
 test("Double Pair of Q and 10", (t) => {
@@ -68,7 +68,7 @@ test("Double Pair of Q and 10", (t) => {
     card("A", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Double Pair", strength: 2, rank: "Q", kickers: ["10", "A"] });
+  t.strictSame(has(cards), { name: "Double Pair", strength: 2, rank: "Q", kickers: ["10", "A"] });
 });
 
 test("Double Pair issue#1", (t) => {
@@ -81,5 +81,5 @@ test("Double Pair issue#1", (t) => {
     card("5", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Double Pair", strength: 2, rank: "K", kickers: ["Q", "5"] });
+  t.strictSame(has(cards), { name: "Double Pair", strength: 2, rank: "K", kickers: ["Q", "5"] });
 });

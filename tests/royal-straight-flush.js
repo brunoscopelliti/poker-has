@@ -16,7 +16,7 @@ test("Royal Straight Flush C", (t) => {
     card("Q", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Royal flush", strength: 9, rank: "A", kickers: [] });
+  t.strictSame(has(cards), { name: "Royal flush", strength: 9, rank: "A", kickers: [] });
 });
 
 test("Royal Straight Flush H", (t) => {
@@ -29,5 +29,5 @@ test("Royal Straight Flush H", (t) => {
     card("A", "H"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Royal flush", strength: 9, rank: "A", kickers: [] });
+  t.strictSame(has(cards), { name: "Royal flush", strength: 9, rank: "A", kickers: [] });
 });

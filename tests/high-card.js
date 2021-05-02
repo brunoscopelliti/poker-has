@@ -16,7 +16,7 @@ test("High card is A", (t) => {
     card("9", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Card High", strength: 0, rank: "A", kickers: ["Q", "J", "9", "4"] });
+  t.strictSame(has(cards), { name: "Card High", strength: 0, rank: "A", kickers: ["Q", "J", "9", "4"] });
 });
 
 test("High card is A / 2", (t) => {
@@ -29,7 +29,7 @@ test("High card is A / 2", (t) => {
     card("10", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Card High", strength: 0, rank: "A", kickers: ["K", "J", "10", "2"] });
+  t.strictSame(has(cards), { name: "Card High", strength: 0, rank: "A", kickers: ["K", "J", "10", "2"] });
 });
 
 test("High card is Q", (t) => {
@@ -42,7 +42,7 @@ test("High card is Q", (t) => {
     card("9", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Card High", strength: 0, rank: "Q", kickers: ["J", "9", "4", "2"] });
+  t.strictSame(has(cards), { name: "Card High", strength: 0, rank: "Q", kickers: ["J", "9", "4", "2"] });
 });
 
 test("High card is 10", (t) => {
@@ -55,7 +55,7 @@ test("High card is 10", (t) => {
     card("9", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Card High", strength: 0, rank: "10", kickers: ["9", "5", "4", "2"] });
+  t.strictSame(has(cards), { name: "Card High", strength: 0, rank: "10", kickers: ["9", "5", "4", "2"] });
 });
 
 test("Almost straight", (t) => {
@@ -68,7 +68,7 @@ test("Almost straight", (t) => {
     card("Q", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Card High", strength: 0, rank: "Q", kickers: ["J", "10", "9", "2"] });
+  t.strictSame(has(cards), { name: "Card High", strength: 0, rank: "Q", kickers: ["J", "10", "9", "2"] });
 });
 
 test("Almost flush", (t) => {
@@ -81,5 +81,5 @@ test("Almost flush", (t) => {
     card("Q", "C"),
   ]);
 
-  t.strictDeepEqual(has(cards), { name: "Card High", strength: 0, rank: "A", kickers: ["Q", "J", "3", "2"] });
+  t.strictSame(has(cards), { name: "Card High", strength: 0, rank: "A", kickers: ["Q", "J", "3", "2"] });
 });
