@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint lib/** tests/*.js",
-    "test": "npm run lint && tap tests/*.js"
+    "test": "npm run lint && tap tests/*.js --coverage-report=html"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,9 @@
   },
   "homepage": "https://github.com/brunoscopelliti/poker-has",
   "devDependencies": {
-    "eslint": "5.12.0",
-    "eslint-config-bruno": "2.0.0",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-node": "8.0.1",
-    "eslint-plugin-promise": "4.0.1",
-    "eslint-plugin-standard": "4.0.0",
+    "eslint": "7.25.0",
+    "eslint-config-bruno": "3.0.0",
     "pre-commit": "1.2.2",
-    "tap": "12.1.1"
+    "tap": "15.0.6"
   }
 }
